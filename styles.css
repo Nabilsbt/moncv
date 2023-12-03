@@ -1,0 +1,89 @@
+body
+{
+front-family : verdana;
+color: #0f0c0d;
+}
+
+header,footer,section,article {
+    border : 1px sold rgb(108, 179, 226);
+    margin : cen;
+    padding : 8px;
+    background-color:white; 
+    
+}
+header {
+    color : white;
+    background-color:rgb(148, 203, 224);
+}
+footer {
+    color : rgb(15, 12, 12);
+    background-color:rgb(138, 190, 224);  
+}
+#ftable
+{
+
+    
+        border-collapse: collapse;
+        width : 300px;
+        margin-bottom: 50px;
+    
+    /* Mettre une bordure sur les td ET les th */
+    
+        border: 1px solid black;
+    
+
+    
+}
+#th /* Mettre une bordure sur les td ET les th */
+{
+    border: 3px solid black;
+    width: 400px;
+    margin: bottom 50px;
+
+}
+#tr
+{
+    border: 1px solid black; 
+    
+}
+
+section {
+    background-color:#ddd;
+    background-color:#ddd;
+    align-items: center;
+    max-width: 100%;
+    margin: 100px auto;
+    padding: 50px;
+    text color : black;
+    
+    
+    
+
+ 
+}
+h2{
+    font-size: 20px;
+    color: #f1356d; 
+}
+#form{
+    width: 1000px;
+    background-color: #f2f2f2;
+    padding: 20px;
+} 
+.orange{
+    color: orange;
+}
+#italic{
+    font-style: bold;
+    text-decoration: underline  rgb(252, 4, 37) ;
+    color:  #2c00ee; 
+}
+.inclin{
+    font-style: italic;
+}
+
+
+
+
+
+

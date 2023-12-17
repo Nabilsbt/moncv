@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <link rel="stylesheet" href="styles.css"/>
+
 </head>
 <body>
     <header>
@@ -59,22 +60,25 @@
             const prenomInput = document.getElementsByName('prenom')[0].value;
             const emailInput = document.getElementById('email').value;
 
+            const errorMessages = [];
+
             if (!isNameValid(nomInput)) {
-                alert("Veuillez entrer un nom valide (lettres uniquement).");
-                return;
+                errorMessages.push("Veuillez entrer un nom valide (lettres uniquement).");
             }
 
             if (!isNameValid(prenomInput)) {
-                alert("Veuillez entrer un prénom valide (lettres uniquement).");
-                return;
+                errorMessages.push("Veuillez entrer un prénom valide (lettres uniquement).");
             }
 
             if (!isEmailValid(emailInput)) {
-                alert('Veuillez entrer une adresse e-mail valide.');
-                return;
+                errorMessages.push('Veuillez entrer une adresse e-mail valide.');
             }
 
-            alert('Formulaire validé avec succès!');
+            if (errorMessages.length > 0) {
+                alert(errorMessages.join('\n'));
+            } else {
+                alert('Formulaire validé avec succès!');
+            }
         }
 
         function isNameValid(name) {
@@ -88,5 +92,4 @@
         }
     </script>
 </body>
-
 </html>

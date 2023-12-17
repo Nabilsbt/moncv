@@ -54,7 +54,7 @@
             <tbody id="tr">
                 <tr>
                     <td id="tr">2025-2029</td>
-                    <td id="tr"> 2029-</td>
+                    <td id="tr"> 2029-2012</td>
                   </tr>
                 <tr>
                     <td id="tr">telnet</td>
@@ -92,6 +92,7 @@
                 
             </tbody>   
         </table><br>
+
        </section>
        <hr>
        <footer>
@@ -117,4 +118,60 @@
         
         
        </footer>
+       <div id="endOfPagePopup" class="popup">
+        <p>Vous avez atteint la fin de la page.</p>
+        <button onclick="closeEndOfPagePopup()">Fermer</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            function openEndOfPagePopup() {
+                document.getElementById('endOfPagePopup').style.display = 'block';
+            }
+
+          
+            function closeEndOfPagePopup() {
+                document.getElementById('endOfPagePopup').style.display = 'none';
+            }
+
+            
+            window.addEventListener('scroll', function () {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    openEndOfPagePopup();
+                }
+            });
+        });
+    
+      
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            function toggleDetails(sectionId) {
+                const section = document.getElementById(sectionId);
+                section.classList.toggle('hidden');
+            }
+    
+            const sectionTitles = document.querySelectorAll('thead th');
+            sectionTitles.forEach(title => {
+                title.addEventListener('click', function () {
+                    const sectionId = this.parentElement.getAttribute('id');
+                    toggleDetails(sectionId);
+                });
+            });
+    
+
+            function changeBackgroundColorOnHover() {
+                document.body.style.backgroundColor = 'lightblue';
+            }
+
+            const logos = document.querySelectorAll('footer img');
+            logos.forEach(logo => {
+                logo.addEventListener('mouseover', changeBackgroundColorOnHover);
+                logo.addEventListener('mouseout', function () {
+                    document.body.style.backgroundColor = '';
+                });
+            });
+        });
+    
+  </script>
     </body>

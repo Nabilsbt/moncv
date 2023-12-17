@@ -1,6 +1,6 @@
 body
 {
-front-family : verdana;
+font-family : verdana;
 color: #0f0c0d;
 }
 
@@ -54,7 +54,7 @@ section {
     max-width: 100%;
     margin: 100px auto;
     padding: 50px;
-    text color : black;
+    text-decoration-color :black;
     
     
     
@@ -82,6 +82,37 @@ h2{
     font-style: italic;
 }
 
+.hidden {
+    display: none;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgb(17, 179, 71);
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+header {
+    position: relative;
+    animation: moveHeader 2s infinite alternate; 
+}
+
+@keyframes moveHeader {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50px; 
+    }
+}
+.error {
+    color: red;
+    font-size: 12px;
+}
 
 
 

@@ -1,57 +1,92 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <link rel="stylesheet" href="styles.css"/>
-</head>    
+</head>
+<body>
+    <header>
+        <table id="form" >
+            <tr>
+                <th><a href="acceuil.html">acceuil</a></th>
+                <th><a href="CV.html">compétences</a></th>
+                <th><a href="exper.html">certificats</a></th>
+                <th><a href="index.html">Contact</a></th>
+            </tr>
+        </table>
+    </header>
 
-<body >
-<header>
-    <table id="form" ><br><tr><th><a href="acceuil.html">acceuil</a></th>
-        <th><a href="CV.html">compétences</a></th>
-        <th><a href="exper.html">certificats</a></th>
-        <th><a href="index.html">Contact</a></th>
-        
-    </table>
-</header>
- 
+    <section>
+        <br>
+        <form id="cvForm">
+            <fieldset>
+                <legend>Formulaire Type</legend>
 
-<section>
-   
-<br>
-    <form >
-        <fieldset>
+                <h2>Coordonnées</h2>
+                <label>
+                    Nom:
+                </label>
+                <input name="nom" type="text" required><br>
 
-            <legend>Formulaire Type</legend>
+                <label>
+                    Prénom:
+                </label>
+                <input name="prenom" type="text" required><br>
 
-            <h2>Coordonnées</h2>
-            <label>
-                Nom:
-            </label>
-            <input name="nom" type="text"><br>
+                <label>
+                    Email:
+                </label>
+                <input id="email" type="email" name="email" required><span id="emailError" class="error"></span><br>
 
-            <label>
-                Prenom
-            </label>
-            <input name="prenom" type="text"><br>
+                <label>
+                    Message:
+                </label>
+                <textarea name="message" required></textarea><br>
 
-            <label>
-                email
-            </label>
-            <input id="email" type="email" name="email"><br>
+                <input type="button" value="Valider" onclick="validateForm()">
+            </fieldset>
+        </form>
+    </section>
 
-            <label>
-                message
-            </label>
-            <input type="text" name="message"><br>
-
-            
-            <input type="submit"  value="Envoyer">
-    </form>
-   
-</section>
     <hr>
-<footer>
-        <b class="inclin" href="www.gmail.com">nabil.sebtaoui@esprit.tn</b>
-</footer>
+
+    <footer>
+        <a class="inclin" href="mailto:nabil.sebtaoui@esprit.tn">nabil.sebtaoui@esprit.tn</a>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const nomInput = document.getElementsByName('nom')[0].value;
+            const prenomInput = document.getElementsByName('prenom')[0].value;
+            const emailInput = document.getElementById('email').value;
+
+            if (!isNameValid(nomInput)) {
+                alert("Veuillez entrer un nom valide (lettres uniquement).");
+                return;
+            }
+
+            if (!isNameValid(prenomInput)) {
+                alert("Veuillez entrer un prénom valide (lettres uniquement).");
+                return;
+            }
+
+            if (!isEmailValid(emailInput)) {
+                alert('Veuillez entrer une adresse e-mail valide.');
+                return;
+            }
+
+            alert('Formulaire validé avec succès!');
+        }
+
+        function isNameValid(name) {
+            const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+            return nameRegex.test(name);
+        }
+
+        function isEmailValid(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
 </body>
 
 </html>
